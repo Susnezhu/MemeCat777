@@ -45,6 +45,21 @@ button:hover {
     background-color: #b00c43;
 }
 
+#musicOnOff{
+    box-shadow: none;
+    background-color: none;
+    background: none;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    margin: 0;
+}
+#musicOnOff_image {
+    box-shadow: none;
+    width: 50px;
+
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
