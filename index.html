@@ -13,31 +13,35 @@
     <img id="musicOnOff_image" src="sounds/stopMusic.png">
     </button>
 
+    <img src="memes/cat-dance.gif" id="catDance1">
+    <img src="memes/cat_dance2.gif" id="catDance2">
+    <p id="winText">10€</p>
+
     <h1>🐱 MemeCat777 🎰</h1>
 
     <div class="score">
-        <p>Rahaa: 50€</p>
-        <p>Panos: 1€</p>
+        <p id="cashText">Rahaa: 50€</p>
+        <p id="betText">Panos: 1€</p>
     </div>
 
     <div class="slot">
         <div class="column">
-            <img src="memes/one.jpeg" alt="cat 1">
+            <img id="slot1" src="memes/one.jpeg" alt="cat 1">
             <button id="first_lock">Lukitse 🔓</button>
         </div>
 
         <div class="column">
-            <img src="memes/one.jpeg" alt="cat 2">
+            <img id="slot2" src="memes/one.jpeg" alt="cat 2">
             <button id="second_lock">Lukitse 🔓</button>
         </div>
 
         <div class="column">
-            <img src="memes/one.jpeg" alt="cat 3">
+            <img id="slot3" src="memes/one.jpeg" alt="cat 3">
             <button id="third_lock">Lukitse 🔓</button>
         </div>
 
         <div class="column">
-            <img src="memes/one.jpeg" alt="cat 4">
+            <img id="slot4" src="memes/one.jpeg" alt="cat 4">
             <button id="fourth_lock">Lukitse 🔓</button>
         </div>
     </div>
@@ -62,7 +66,7 @@
                 <p>4x = 5€</p>
             </div>
         </div>
-<div class="condition_column">
+        <div class="condition_column">
             <div class="condition">
                 <img src="memes/one.jpeg">
                 <p>3x = 5€</p>
@@ -85,6 +89,8 @@
     <audio src="sounds/meow.mp3" id="miau"></audio>
     <audio src="sounds/purr.mp3" id="purr"></audio>
     <audio src="sounds/lockSound.mp3" id="lock"></audio>
+    <audio src="sounds/slotSpin.mp3" id="slotSpin"></audio>
+    <audio src="sounds/winSound.mp3" id="winSound"></audio>
     
     <script src="script.js"></script>
 </body>
