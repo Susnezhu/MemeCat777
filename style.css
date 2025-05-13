@@ -88,7 +88,7 @@ button:hover {
     background-color: #22222271;
 }
 .slot button:hover {
-    background-color: #22222292;
+    background-color: #22222292 !important;
 }
 
 .column {
