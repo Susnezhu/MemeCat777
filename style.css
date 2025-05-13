@@ -47,7 +47,7 @@ button:hover {
 
 #musicOnOff{
     box-shadow: none;
-    background-color: none;
+    background-color: transparent;
     background: none;
     position: absolute;
     right: 10px;
