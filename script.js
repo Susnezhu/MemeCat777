@@ -62,15 +62,15 @@ const imgs = [
     {img: "three.jpeg", payout: 5},
     {img: "four.jpeg", payout: 4},
     {img: "five.jpeg", payout: 3},
-    {payout: 5}
+    {img: "one.jpeg", payout: 5}
 ]
 
 //rullat ja arvot
 const slots = [
-    {slot: slot1, lock: true, value: 1},
-    {slot: slot2, lock: true, value: 1},
+    {slot: slot1, lock: false, value: null},
+    {slot: slot2, lock: false, value: null},
     {slot: slot3, lock: false, value: null},
-    {slot: slot4, lock: true, value: 1}
+    {slot: slot4, lock: false, value: null}
 ]
 
 //lukitusnäppäimet
@@ -118,7 +118,7 @@ function buttonsOff(value) {
 
 //antaa randomin numeron 0-4 ja ottaa kuvan indeksillä
 function randomPic(){
-    const index = Math.floor(Math.random() * 4) + 1; //numero 1 - 5
+    const index = Math.floor(Math.random() * 5); //numero 0 - 4
     return {
         id: index, //kuvan numero
         pic: imgs[index].img //kuva
@@ -176,7 +176,7 @@ function checkWin() {
     //laskee, kuinka monta ensimmäistä kissakuvaa
     let checkFirstCat = 0
     for (let i = 0; i < slots.length; i++) {
-        if (slots[i].value === 1) {
+        if (slots[i].value === 0) {
             checkFirstCat ++;
         }
     }
