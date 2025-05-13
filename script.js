@@ -3,6 +3,7 @@ isMusicPlaying = false;
 //rahamäärä ja panos
 let currentCash = 50;
 let CurrentBet = 1;
+let cashPayout = 0;
 
 //rullan pyörimisen kerrat
 count = 0;
@@ -60,15 +61,16 @@ const imgs = [
     {img: "two.jpeg", payout: 6},
     {img: "three.jpeg", payout: 5},
     {img: "four.jpeg", payout: 4},
-    {img: "five.jpeg", payout: 3}
+    {img: "five.jpeg", payout: 3},
+    {payout: 5}
 ]
 
 //rullat ja arvot
 const slots = [
-    {slot: slot1, lock: false, value: null},
-    {slot: slot2, lock: false, value: null},
+    {slot: slot1, lock: true, value: 1},
+    {slot: slot2, lock: true, value: 1},
     {slot: slot3, lock: false, value: null},
-    {slot: slot4, lock: false, value: null}
+    {slot: slot4, lock: true, value: 1}
 ]
 
 //lukitusnäppäimet
@@ -171,14 +173,33 @@ function checkWin() {
         }
     }
 
+    //laskee, kuinka monta ensimmäistä kissakuvaa
+    let checkFirstCat = 0
+    for (let i = 0; i < slots.length; i++) {
+        if (slots[i].value === 1) {
+            checkFirstCat ++;
+        }
+    }
+
+    //kolmesta ensimmäisestä kissakuvasta saa voiton
+    if (checkFirstCat === 3) {
+        isWin = true;
+    }
+
     //jos kaikki ovat samanarvoisia, antaa voiton
     if (isWin) {
 
         //ottaa lukitukset pois, koska muuten käyttäjä voi lukita voiton kokoajan
         isLocksWorking = false;
 
-        //lasketaan voitto ja laitetaan se näkyville
-        let cashPayout = (imgs[slots[0].value].payout) * CurrentBet
+        //lasketaan voitto
+        if (checkFirstCat === 3) {
+            cashPayout = imgs[5].payout * CurrentBet
+        } else {
+            cashPayout = (imgs[slots[0].value].payout) * CurrentBet
+        }
+
+        //laitetaan voitto näkyville
         currentCash += cashPayout;
         winText.textContent = cashPayout + "€";
 
@@ -196,7 +217,7 @@ function checkWin() {
             buttonsOff(false);
         }, 5000);
     } else {
-        buttonsOff(false);
+        buttonsOff(false); 
     }
 
     //lopuksi palauttaa lukitus näppäimet oletukseen
